@@ -1,0 +1,11 @@
+<div [routerLink]="CatalogoInfo.Url" routerLinkActive="router-link-active"  class="card pointer card-item" style="width: 18rem; margin-top: 10px; margin-bottom: 10px;">
+    <div class="card-img-top text-center" style="padding: 15px;">
+        <i [class]=CatalogoInfo.IconClass style="color: white"></i>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{CatalogoInfo.Nombre}}</h5>
+        <p class="card-text">
+            {{CatalogoInfo.Descripcion}}
+        </p>
+    </div>
+</div>

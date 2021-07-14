@@ -1,0 +1,11 @@
+<h4 class="text-center">Catálogos</h4>
+<hr>
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div *ngFor="let catalogo of catalogos" class="col">
+            <app-catalogo-item
+            [CatalogoInfo]=catalogo
+            ></app-catalogo-item>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+.card-item i{
+    color: black !important;
+}
+
+.card-item:hover{
+    box-shadow: 1px 1px 4px;
+}
+
+.card-item:hover i{
+    color: #3949ab !important;
+}

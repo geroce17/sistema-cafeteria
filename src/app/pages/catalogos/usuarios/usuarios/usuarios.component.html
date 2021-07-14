@@ -1,0 +1,41 @@
+<div class="card col-12">
+    <div class="card-body">
+      <div class="row">
+       <div class="col-5">
+        <h5 class="card-title">Listado de usuarios</h5>
+       </div>
+       <div class="col-7">
+           <button [routerLink]="['/catalogos/nuevo-usuario']" routerLinkActive="router-link-active"  class="btn btn-primary float-right">
+               <i class="fas fa-plus-circle"></i>
+               Usuario
+            </button>
+       </div>
+      </div>
+      <hr>
+      <table class="table table-dark table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Usuario</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Rol</th>
+                <th scope="col" style="width: 120px">Acciones</th>
+            </tr> 
+        </thead>
+        <tbody>
+            <tr *ngFor="let usuario of usuarios">
+                <td>{{usuario.username}}</td>
+                <td>{{usuario.nombre}}</td>
+                <td>{{usuario.rol}}</td>
+                <td class="d-flex justify-content-between">
+                    <button class="btn btn-primary">
+                        <i class="fas fa-user-edit"></i>
+                    </button>
+                    <button class="btn btn-danger">
+                        <i class="fa fa-minus-circle"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+  </div>

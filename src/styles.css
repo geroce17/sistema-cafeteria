@@ -1,1 +1,88 @@
 /* You can add global styles to this file, and also import other style files */
+.float-right {
+    float: right;
+}
+
+.sidebar-prg{
+    background-color: black;
+    height: 100vh;
+    box-shadow: 1px 1px 3px;
+    padding-left: 0px;
+    padding-right: 0px;
+    position: fixed;
+}
+
+.sidebar-prg li{
+    color: white;
+}
+
+.sb-title{
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 6px 10px;
+}
+
+.title-minus {
+    font-size: 10px;
+}
+
+.sb-title:hover{
+    width: 100%;
+    color: #3949ab;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.sb-group{
+    padding-left: 0px;
+}
+
+.sd-item {
+    width: 100%;
+    color: black;
+    padding: 6px 10px;
+    cursor: pointer;
+    text-decoration: none;
+    list-style: none;
+    align-items: center;
+    padding: 10px 15px;
+}
+
+.sd-item:hover {
+    width: 100%;
+    color: white;
+    padding: 6px 10px;
+    cursor: pointer;
+    background-color: #3949ab;
+    padding: 10px 15px;
+}
+
+.float-right{
+    float: right;
+}
+
+i{
+    margin-top: 5px;
+}
+
+.active{
+    width: 100% !important;
+    color: white !important;
+    padding: 6px 10px !important;
+    cursor: pointer !important;
+    background-color: #3949ab !important;
+    padding: 10px 15px !important;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.card {
+    background-color: #F5F5F5;
+}
+
+body{
+    height: 100vh;
+}
