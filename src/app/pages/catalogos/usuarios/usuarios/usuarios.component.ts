@@ -14,10 +14,22 @@ export class UsuariosComponent implements OnInit {
   constructor(private usuariosServices: UsuarioService) { }
 
   ngOnInit(): void {
+    this.cargarUsuarios();
+  }
+
+  cargarUsuarios(){
     this.usuariosServices.getUsuarios()
-    .subscribe((res: any) => {
-      this.usuarios = res.usuarios;
-    });
+      .subscribe((res: any) => {
+        this.usuarios = res.usuarios;
+      });
+  }
+
+  eliminarUsuario(usuario: Usuario) {
+    this.usuariosServices.deleteUsuario(usuario.uid)
+      .subscribe(res => {
+        console.log(res);
+        this.cargarUsuarios();
+      });
   }
 
 }

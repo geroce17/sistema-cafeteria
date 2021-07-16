@@ -9,6 +9,7 @@ import { ProveedoresComponent } from './proveedores/proveedores.component';
 import { ComponentsModule } from '../components/components.module';
 import { UsuarioCrearComponent } from './catalogos/usuarios/usuario-crear/usuario-crear.component';
 import { UsuariosComponent } from './catalogos/usuarios/usuarios/usuarios.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -25,7 +26,9 @@ import { UsuariosComponent } from './catalogos/usuarios/usuarios/usuarios.compon
   imports: [
     CommonModule,
     RouterModule,
-    ComponentsModule
+    ComponentsModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports: [
     PagesComponent,

@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { catchError, tap, map } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 import { Observable, of } from 'rxjs';
+import { Router } from '@angular/router';
 
 const base_url = environment.base_url;
 
@@ -12,23 +13,23 @@ const base_url = environment.base_url;
 })
 export class UsuarioService {
 
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient, private router: Router) { }
 
-    get token (){
+    get token() {
         return localStorage.getItem('token') || '';
     }
 
-    get headers(){
+    get headers() {
         return {
             headers: {
-              'x-token': this.token
+                'x-token': this.token
             }
-          }
+        }
     }
 
     public loginUser(formData: FormData) {
         console.log(formData);
-        return this.http.post(`${base_url}/auth/login`, formData )
+        return this.http.post(`${base_url}/auth/login`, formData)
             .pipe(
                 tap((res: any) => {
                     console.log(res);
@@ -52,9 +53,27 @@ export class UsuarioService {
         );
     }
 
-    public getUsuarios(desde?){
+    public getUsuarios(desde?) {
         const url = `${base_url}/usuarios?desde=${desde}`;
         return this.http.get(url, this.headers);
+    }
+
+    public createUsuario(usuario: FormData) {
+        const url = `${base_url}/usuarios`;
+        return this.http.post(url, usuario, this.headers);
+    }
+
+    public deleteUsuario(id: string) {
+        console.log(id);
+
+        const url = `${base_url}/usuarios/${id}`;
+        return this.http.delete(url, this.headers);
+    }
+
+    public logout() {
+        localStorage.removeItem('token');
+        // localStorage.removeItem('menu');
+        this.router.navigate(['login']);
     }
 
 }

@@ -16,6 +16,23 @@
     color: white;
 }
 
+.logout-div {
+    width: 100% !important;
+    color: white;
+    background-color: rgb(66, 66, 66);
+    text-align: center;
+    padding: 7px;
+}
+
+.logout-div:hover {
+    width: 100% !important;
+    color: white;
+    background-color: rgb(155, 25, 25);
+    text-align: center;
+    padding: 7px;
+}
+
+
 .sb-title{
     width: 100%;
     color: white;

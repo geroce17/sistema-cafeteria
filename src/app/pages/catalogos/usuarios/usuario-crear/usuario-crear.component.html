@@ -6,20 +6,31 @@
             </div>
         </div>
         <hr>
-            <form>
-                <div class="mb-3">
-                    <label class="form-label">Usuario</label>
-                    <input type="text" class="form-control">
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Nombre completo</label>
-                    <input type="text" class="form-control">
-                </div>
-                <div class="mb-3">
-                    <label  class="form-label">Password</label>
-                    <input type="password" class="form-control">
-                </div>
-                <button type="submit" class="btn btn-success">Guardar</button>
-            </form>
+        <div *ngIf="!usuarioForm.valid && submitted" class="alert alert-danger alert-dismissible fade show" role="alert">
+            Debes de completar todos los campos del formulario
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <form [formGroup]="usuarioForm" (submit)="crearUsuario()">
+            <div class="mb-3">
+                <label class="form-label">* Usuario</label>
+                <input formControlName="username" type="text" class="form-control" placeholder="Escribe tu usuario">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">* Nombre</label>
+                <input formControlName="nombre" type="text" class="form-control" placeholder="Nombre completo">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">* Role</label>
+                <select formControlName="rol" class="form-control">
+                    <option selected value="USER_ROLE">USER_ROLE</option>
+                    <option value="ADMIN_ROLE">ADMIN_ROLE</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">* Contraseña ( mínimo 8 caracteres )</label>
+                <input formControlName="password" type="password" class="form-control" placeholder="contraseña">
+            </div>
+            <button type="submit" class="btn btn-success" [disabled]="!usuarioForm.valid">Guardar</button>
+        </form>
     </div>
 </div>
